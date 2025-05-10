@@ -9,7 +9,13 @@ const messages = [
     "Cachetona bella 🤗",
     "Mi corazón late por ti 💓",
     "Eres mi sueño hecho realidad ✨",
-    "No hay nadie como tú 🌟"
+    "No hay nadie como tú 🌟",
+    "Eres mi media natilla",
+    "Cada día más enamorado de tu",
+    "Me encantas!!! 🤗",
+    "Espero te encuentres bien 🌟",
+    "Te mando un abracito 💑",
+    "Sino te lo he dicho: Te amo cosita bella 💖"
 ];
 
 const envelope = document.querySelector('.envelope');
@@ -99,3 +105,45 @@ document.addEventListener("visibilitychange", function () {
 
 
 const originalTitle = document.title;
+
+
+function updateCountdown() {
+
+    const firtsDate = "22-07-2023";
+    const firstDateObj = new Date(firtsDate.split('-').reverse().join('-')); // Convierte la fecha a formato YYYY-MM-DD
+    const now = new Date();
+    const diff = now - firstDateObj; // Diferencia en milisegundos
+
+    if (diff < 0) {
+        countdownElement.textContent = "¡Aún no ha llegado el día especial! 💕";
+        return;
+    }
+
+    // Calcula días, horas, minutos y segundos desde la fecha
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    
+    countdownElement.innerHTML = `
+        ❤️ Amandote: <br>
+        <span class="count">${days}</span> días, 
+        <span class="count">${hours}</span> horas, 
+        <span class="count">${minutes}</span> minutos, 
+        <span class="count">${seconds}</span> segundos 💖
+        <br>
+        Desde el <span class="count">${firtsDate}</span>
+        <br>
+        y vamos por más! 🐽💞
+    `;
+}
+
+// Crea el elemento del contador y lo agrega al DOM
+const countdownElement = document.createElement('div');
+countdownElement.classList.add('countdown');
+document.body.appendChild(countdownElement);
+
+// Actualiza el contador cada segundo
+setInterval(updateCountdown, 1000);
+updateCountdown();

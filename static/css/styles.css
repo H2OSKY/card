@@ -193,3 +193,25 @@ body {
         border-top: calc(min(40vh, 200px) / 2) solid #c0392b;
     }
 }
+
+
+.countdown {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 192, 203, 0.8); /* Color rosa romántico */
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Cursive', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #ff69b4; /* Color rosa fuerte */
+    z-index: 1000;
+}
+
+.countdown .count {
+    font-weight: bold;
+    color: #ff1493; /* Color rosa oscuro */
+}
